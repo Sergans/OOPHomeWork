@@ -3,21 +3,22 @@ using System.Collections.Generic;
 
 namespace LessonOOP_2
 {
-    public enum AccauntType {};
+    public enum AccauntType {Credit,Debit}
     public class BankAccount
     {
-       private int Nomber;
-       private decimal Balance;
-       public AccauntType type;
-        public void Rec(int a,decimal b)
+        private int Nomber;
+        private decimal Balance;
+        private AccauntType Type;
+        
+        public void Rec(int a,decimal b,AccauntType c)
         {
             this.Nomber = a;
             this.Balance = b;
-           
+            this.Type = c;
        }
         public void Read()
         {
-            Console.WriteLine($"Номер счета - {Nomber}\r\nБаланс - {Balance}");
+            Console.WriteLine($"Номер счета - {Nomber}\r\nБаланс - {Balance}\r\nТип счета - {Type}");
         }
 
     }
@@ -27,11 +28,12 @@ namespace LessonOOP_2
         {
            
             BankAccount bank = new BankAccount();
-            bank.Rec(11111, 6989);
+            bank.Rec(11111, 6989,AccauntType.Credit);
             bank.Read();
-            Console.WriteLine(bank.type);
-            bank.type
+            bank.Rec(22222, 88888, AccauntType.Debit);
+            bank.Read();
             
+
         }
     }
 }
