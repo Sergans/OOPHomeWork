@@ -6,27 +6,23 @@ namespace LessonOOP_2
     public enum AccauntType {Credit,Debit}
     public class BankAccount
     {
-        private int Nomber;
-        private decimal Balance;
-        private AccauntType Type;
-        private static int UnicNomber;
         
-        public void Rec(decimal b,AccauntType c)
+        public decimal Balance { get; set; }
+        public AccauntType Type { get; set; }
+        private static int unicNomber;
+        public int UnicNomber
         {
-            UnicNomber = GetUnicnomber();
-            this.Balance = b;
-            this.Type = c;
-       }
-        public void Read()
-        {
-            Console.WriteLine($"Номер счета - {UnicNomber}\r\nБаланс - {Balance}\r\nТип счета - {Type}");
-        }
-        public int GetUnicnomber()
-        {
-                UnicNomber++;
-                return UnicNomber;
-        }
+            get
+            {
+                return unicNomber;
+            }
+            set
+            {
 
+                unicNomber++;
+            }
+        }
+        
     }
     class Program
     {
@@ -34,15 +30,15 @@ namespace LessonOOP_2
         {
 
             BankAccount bank = new BankAccount();
-            bank.Rec(565655, AccauntType.Credit);
-            bank.Read();
+            bank.Balance = 5555;
+            bank.Type = AccauntType.Credit;
+            bank.UnicNomber = 0;
+            Console.WriteLine($"Номер счета - {bank.UnicNomber}\r\nБаланс - {bank.Balance}\r\nТип счета - {bank.Type}");
             BankAccount bank1 = new BankAccount();
-            bank1.Rec(5555, AccauntType.Debit);
-            bank1.Read();
-            BankAccount bank2 = new BankAccount();
-            bank2.Rec(66666, AccauntType.Credit);
-            bank2.Read();
-
+            bank1.Balance = 6666;
+            bank1.Type = AccauntType.Debit;
+            bank1.UnicNomber = 0;
+            Console.WriteLine($"Номер счета - {bank1.UnicNomber}\r\nБаланс - {bank1.Balance}\r\nТип счета - {bank1.Type}");
 
         }
     }
