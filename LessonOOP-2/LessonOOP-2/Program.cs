@@ -9,16 +9,22 @@ namespace LessonOOP_2
         private int Nomber;
         private decimal Balance;
         private AccauntType Type;
+        private static int UnicNomber;
         
-        public void Rec(int a,decimal b,AccauntType c)
+        public void Rec(decimal b,AccauntType c)
         {
-            this.Nomber = a;
+            UnicNomber = GetUnicnomber();
             this.Balance = b;
             this.Type = c;
        }
         public void Read()
         {
-            Console.WriteLine($"Номер счета - {Nomber}\r\nБаланс - {Balance}\r\nТип счета - {Type}");
+            Console.WriteLine($"Номер счета - {UnicNomber}\r\nБаланс - {Balance}\r\nТип счета - {Type}");
+        }
+        public int GetUnicnomber()
+        {
+                UnicNomber++;
+                return UnicNomber;
         }
 
     }
@@ -26,13 +32,17 @@ namespace LessonOOP_2
     {
         static void Main(string[] args)
         {
-           
+
             BankAccount bank = new BankAccount();
-            bank.Rec(11111, 6989,AccauntType.Credit);
+            bank.Rec(565655, AccauntType.Credit);
             bank.Read();
-            bank.Rec(22222, 88888, AccauntType.Debit);
-            bank.Read();
-            
+            BankAccount bank1 = new BankAccount();
+            bank1.Rec(5555, AccauntType.Debit);
+            bank1.Read();
+            BankAccount bank2 = new BankAccount();
+            bank2.Rec(66666, AccauntType.Credit);
+            bank2.Read();
+
 
         }
     }
