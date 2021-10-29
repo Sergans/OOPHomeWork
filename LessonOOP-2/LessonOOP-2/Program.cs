@@ -24,7 +24,9 @@ namespace LessonOOP_2
         }
         public void GetBalance(BankAccount unicnomber,decimal summ)
         {
-           Balance = Balance + summ;
+           
+           this.Balance = Balance + summ;
+           unicnomber.Balance =unicnomber.Balance-summ;
         }
         
     }
@@ -38,24 +40,14 @@ namespace LessonOOP_2
             bank.Type = AccauntType.Credit;
             bank.UnicNomber = 0;
             Console.WriteLine($"Номер счета - {bank.UnicNomber}\r\nБаланс - {bank.Balance}\r\nТип счета - {bank.Type}");
-            
-            var a = bank;
-           // var b = bank1;
-            bank.GetBalance(a, 1111);
-            Console.WriteLine($"Номер счета - {bank.UnicNomber}\r\nБаланс - {bank.Balance}\r\nТип счета - {bank.Type}");
-            bank.GetBalance(a, 1111);
-            Console.WriteLine($"Номер счета - {bank.UnicNomber}\r\nБаланс - {bank.Balance}\r\nТип счета - {bank.Type}");
             BankAccount bank1 = new BankAccount();
-            bank1.Balance = 2222;
+            bank1.Balance = 3333;
             bank1.Type = AccauntType.Debit;
             bank1.UnicNomber = 0;
-            BankAccount bank2 = new BankAccount();
-            bank2.Balance = 1111;
-            bank2.Type = AccauntType.Debit;
-            bank2.UnicNomber = 0;
-            bank2.GetBalance(a, 2222);
-            Console.WriteLine($"Номер счета - {bank2.UnicNomber}\r\nБаланс - {bank2.Balance}\r\nТип счета - {bank2.Type}");
-
+            Console.WriteLine($"Номер счета - {bank1.UnicNomber}\r\nБаланс - {bank1.Balance}\r\nТип счета - {bank1.Type}");
+            bank.GetBalance(bank1, 1111);
+            Console.WriteLine($"Номер счета - {bank.UnicNomber}\r\nБаланс - {bank.Balance}\r\nТип счета - {bank.Type}");
+            Console.WriteLine($"Номер счета - {bank1.UnicNomber}\r\nБаланс - {bank1.Balance}\r\nТип счета - {bank1.Type}");
         }
     }
 }
