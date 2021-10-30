@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 
 namespace LessonOOP_2
-{// задание 3-1
+{
+    
+    // задание 3-1
     public enum AccauntType {Credit,Debit}
     public class BankAccount
     {
@@ -36,9 +38,22 @@ namespace LessonOOP_2
 
     }
     class Program
-    {
+    {       // задание 3-2
+        public static string Revers(string str)
+        {
+            string newstring = "";
+            for(int i= str.Length-1; i >= 0; i--)
+            {
+                newstring += str[i];
+            }
+            return newstring;
+        } 
         static void Main(string[] args)
         {
+            //задание 3-2
+            string str = "Бронетраспортер";
+            Console.WriteLine(Revers(str));
+
             BankAccount bank = new BankAccount(4444, AccauntType.Credit);
             BankAccount bank1 = new BankAccount(3333, AccauntType.Debit);
             BankAccount bank2 = new BankAccount(2222, AccauntType.Credit);
