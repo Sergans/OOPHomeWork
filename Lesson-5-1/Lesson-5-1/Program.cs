@@ -60,6 +60,12 @@ namespace Lesson_5_1
         {
             return new Fraction(f1.Numerator * f2.Denominator, f1.Denominator * f2.Numerator);
         }
+        public static float operator %(Fraction f1, Fraction f2)
+        {
+            
+
+            return (f1.ToFloat()%f2.ToFloat());
+        }
         public static bool operator ==(Fraction f1, Fraction f2)
         {
             if (f1.ToFloat() == f2.ToFloat())
@@ -126,8 +132,8 @@ namespace Lesson_5_1
     {
         static void Main(string[] args)
         {
-            Fraction n1 = new Fraction(2, 3);
-            Fraction n2 = new Fraction(1, 2);
+            Fraction n1 = new Fraction(3, 3);
+            Fraction n2 = new Fraction(2, 2);
             if (n1 >n2)
             {
                 //var a = n1 + n2;
@@ -139,9 +145,11 @@ namespace Lesson_5_1
                 //Console.WriteLine();
                 //Console.WriteLine(b.ToFloat());
             }
-            var a = n1 / n2;
-            Console.WriteLine(a.ToString());
-            Console.WriteLine(a.ToFloat());
+            var c = 10F % 5F;
+            Console.WriteLine(c);
+            var a = n1 % n2;
+            Console.WriteLine(a);
+           // Console.WriteLine(a.ToFloat());
         }
     }
 }
