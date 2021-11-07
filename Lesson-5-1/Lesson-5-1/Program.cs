@@ -127,7 +127,7 @@ namespace Lesson_5_1
         {
             Fraction n1 = new Fraction(1, 2);
             Fraction n2 = new Fraction(1, 3);
-            if (n1 > n2)
+            if (n1 < n2)
             {
                 var a = n1 + n2;
                 var b = n1 - n2;
