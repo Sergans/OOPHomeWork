@@ -58,7 +58,41 @@ namespace Lesson_5_1
             }
             else { return true; }
         }
+        public static bool operator>(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() > f2.ToFloat())
+            {
+                return true;
+            }
+            else { return false; }
 
+        }
+
+        public static bool operator <(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() < f2.ToFloat())
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
+        public static bool operator >=(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() >= f2.ToFloat())
+            {
+                return true;
+            }
+            else { return false; }
+        }
+        public static bool operator <=(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() <= f2.ToFloat())
+            {
+                return true;
+            }
+            else { return false; }
+        }
         public override string ToString()
         {
             return ($"{this.Numerator}\r\n-\r\n{this.Denominator}");
@@ -75,7 +109,7 @@ namespace Lesson_5_1
         {
             Fraction n1 = new Fraction(1, 3);
             Fraction n2 = new Fraction(1, 2);
-            if (n1 != n2)
+            if (n1 <n2)
             {
                 var a = n1 + n2;
                 var b = n1 - n2;
