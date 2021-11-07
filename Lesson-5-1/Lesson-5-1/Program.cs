@@ -45,6 +45,12 @@ namespace Lesson_5_1
         {
             return ($"{this.Numerator}\r\n-\r\n{this.Denominator}");
         }
+        public float ToFloat()
+        {
+            
+            return (float)this.Numerator / (float)this.Denominator;
+        }
+        
     }
     class Program
     {
@@ -56,7 +62,11 @@ namespace Lesson_5_1
             var b = n1 - n2;
             Console.WriteLine(a.ToString());
             Console.WriteLine();
+            Console.WriteLine(a.ToFloat());
             Console.WriteLine(b.ToString());
+            
+            
+       
         }
     }
 }
