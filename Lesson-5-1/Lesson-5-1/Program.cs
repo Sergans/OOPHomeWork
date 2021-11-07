@@ -18,10 +18,6 @@ namespace Lesson_5_1
                 return new Fraction(f1.Numerator + f2.Numerator, f1.Denominator);
             }
             
-            //int numer1 = f1.Numerator * f2.Denominator;
-            //int denom1 = f1.Denominator * f2.Denominator;
-            //int numer2 = f2.Numerator * f1.Denominator;
-            //int denom2 = f2.Denominator * f1.Denominator;
             Fraction _f1 =new Fraction((f1.Numerator * f2.Denominator), (f1.Denominator * f2.Denominator));
             Fraction _f2=new Fraction(f2.Numerator * f1.Denominator, f2.Denominator * f1.Denominator);
             return new Fraction(_f1.Numerator + _f2.Numerator, _f1.Denominator);
@@ -43,10 +39,7 @@ namespace Lesson_5_1
             {
                 return new Fraction(f1.Numerator - f2.Numerator, f1.Denominator);
             }
-            //int numer1 = f1.Numerator * f2.Denominator;
-            //int denom1 = f1.Denominator * f2.Denominator;
-            //int numer2 = f2.Numerator * f1.Denominator;
-            //int denom2 = f2.Denominator * f1.Denominator;
+            
             Fraction _f1 = new Fraction(f1.Numerator * f2.Denominator, f1.Denominator * f2.Denominator);
             Fraction _f2 = new Fraction(f2.Numerator * f1.Denominator, f2.Denominator * f1.Denominator);
             return new Fraction(_f1.Numerator - _f2.Numerator, _f1.Denominator);
@@ -73,7 +66,7 @@ namespace Lesson_5_1
                 return true;
             }
             else { return false; }
-            
+
         }
         public static bool operator !=(Fraction f1, Fraction f2)
         {
@@ -126,30 +119,26 @@ namespace Lesson_5_1
         {
           return (float)this.Numerator / (float)this.Denominator;
         }
-        
+       
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Fraction n1 = new Fraction(3, 3);
-            Fraction n2 = new Fraction(2, 2);
-            if (n1 >n2)
+            Fraction n1 = new Fraction(1, 2);
+            Fraction n2 = new Fraction(1, 3);
+            if (n1 > n2)
             {
-                //var a = n1 + n2;
-                //var b = n1 - n2;
-                //Console.WriteLine(a.ToString());
-                //Console.WriteLine();
-                //Console.WriteLine(a.ToFloat());
-                //Console.WriteLine(b.ToString());
-                //Console.WriteLine();
-                //Console.WriteLine(b.ToFloat());
+                var a = n1 + n2;
+                var b = n1 - n2;
+                Console.WriteLine(a.ToString());
+                Console.WriteLine();
+                Console.WriteLine(a.ToFloat());
+                Console.WriteLine(b.ToString());
+                Console.WriteLine();
+                Console.WriteLine(b.ToFloat());
             }
-            var c = 10F % 5F;
-            Console.WriteLine(c);
-            var a = n1 % n2;
-            Console.WriteLine(a);
-           // Console.WriteLine(a.ToFloat());
+
         }
     }
 }
