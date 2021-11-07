@@ -41,14 +41,31 @@ namespace Lesson_5_1
             return new Fraction(_f1.Numerator - _f2.Numerator, _f1.Denominator);
 
         }
+        public static bool operator ==(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() == f2.ToFloat())
+            {
+                return true;
+            }
+            else { return false; }
+            
+        }
+        public static bool operator !=(Fraction f1, Fraction f2)
+        {
+            if (f1.ToFloat() == f2.ToFloat())
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
         public override string ToString()
         {
             return ($"{this.Numerator}\r\n-\r\n{this.Denominator}");
         }
         public float ToFloat()
         {
-            
-            return (float)this.Numerator / (float)this.Denominator;
+          return (float)this.Numerator / (float)this.Denominator;
         }
         
     }
@@ -58,15 +75,28 @@ namespace Lesson_5_1
         {
             Fraction n1 = new Fraction(1, 3);
             Fraction n2 = new Fraction(1, 2);
-            var a = n1 + n2;
-            var b = n1 - n2;
-            Console.WriteLine(a.ToString());
-            Console.WriteLine();
-            Console.WriteLine(a.ToFloat());
-            Console.WriteLine(b.ToString());
-            
-            
-       
+            if (n1 != n2)
+            {
+                var a = n1 + n2;
+                var b = n1 - n2;
+                Console.WriteLine(a.ToString());
+                Console.WriteLine();
+                Console.WriteLine(a.ToFloat());
+                Console.WriteLine(b.ToString());
+                Console.WriteLine();
+                Console.WriteLine(b.ToFloat());
+            }
+            //var a = n1 + n2;
+            //var b = n1 - n2;
+            //Console.WriteLine(a.ToString());
+            //Console.WriteLine();
+            //Console.WriteLine(a.ToFloat());
+            //Console.WriteLine(b.ToString());
+            //Console.WriteLine();
+            //Console.WriteLine(b.ToFloat());
+
+
+
         }
     }
 }
